@@ -1,8 +1,3 @@
-# search-blogs
-
-Test task
-
-
 ## Running
 
 To start a web server for the application, run:
@@ -11,11 +6,6 @@ To start a web server for the application, run:
 
 ## Runnable jar
 
-To start a web server for the application withou lein, run:
+To start a web server for the application without lein, run:
 
     java -jar target/search-blogs-0.1.0-SNAPSHOT-standalone.jar
-
-
-## License
-
-Copyright © 2016 FIXME
