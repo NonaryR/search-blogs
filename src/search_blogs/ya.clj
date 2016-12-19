@@ -55,9 +55,10 @@
   (let [queue (partition-all 5 coll)]
     (for [batch queue]
       (let [urls (map #(str request-template (str %)) (flatten batch))
-            futures (doall (map http/get urls))]
-        (for [resp futures]
-          (collect-domains @resp))))))
+            promises (doall (map http/get urls))
+            results (doall (map deref promises))]
+        (for [resp results]
+          (collect-domains resp))))))
 
 (defn frequency-stat
   [coll]
